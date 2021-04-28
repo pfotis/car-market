@@ -4,30 +4,22 @@ const Schema = mongoose.Schema;
 
 
 const UserSchema = new Schema({
-  username: {
+  Name: {
     type: String,
-    required: true,
-    unique: true
+    required: true
+  },
+  Surame: {
+    type: String,
+    required: true
   },
   password: {
     type: String,
     required: true
   },
-  userImage: {
-    type: String
-  },
   email: {
     type: String,
     required: true,
     unique: true
-  },
-  joinDate: {
-    type: Date,
-    default: Date.now
-  },
-  favorites: {
-    type: [Schema.Types.ObjectId],
-    ref: 'Car'
   }
 });
 
@@ -47,8 +39,5 @@ UserSchema.pre('save', function(next) {
         });
       });
 })
-
-
-
 
 module.exports = mongoose.model('User', UserSchema);
