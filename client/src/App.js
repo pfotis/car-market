@@ -4,6 +4,8 @@ import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import footer from "./components/Footer";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
+        <Footer/>
       </div>
     </Router>
   );
