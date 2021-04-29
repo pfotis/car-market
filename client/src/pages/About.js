@@ -4,7 +4,7 @@ import { Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 
 
-function Buy() {
+function About() {
   
     return (
       <Container fluid>
@@ -14,4 +14,4 @@ function Buy() {
   }
 
 
-export default Buy;
+export default About;

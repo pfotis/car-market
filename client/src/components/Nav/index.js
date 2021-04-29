@@ -43,7 +43,7 @@ function Nav() {
         </li>
         <li className="nav-item">
           <NavLink
-            to="/carmarket"
+            to="/about"
             className="nav-link"
           >
             About Car Market

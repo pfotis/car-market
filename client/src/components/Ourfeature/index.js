@@ -1,18 +1,17 @@
 import React from 'react';
+import { Col, Row, Container } from "../Grid";
 import "./style.css";
 
 const OurFeature = () => {
   return (
     <div className='mt-5 pt-5'>
-      {/*Section: Content*/}
       <section className='white-text'>
-        {/* Grid row */}
-        <div className='row'>
-          <div className='col'>
+        <Row>
+          <Col size="md-12">
             <div className='card z-depth-2'>
               <div className='card-body p-0'>
                 <div className='row mx-0'>
-                  <div className='col-lg-6 mdb-color primary-color py-5 px-md-5'>
+                  <div className='col-md-6 mdb-color primary-color py-5 px-md-5'>
                     <h4 className='font-weight-bold text-white ml-3 mb-4 pb-2'>
                       Saves time for sellers
                     </h4>
@@ -21,13 +20,7 @@ const OurFeature = () => {
                         <span className='fa-li'>
                           <i className='fas fa-check' />
                         </span>
-                        Upload & selll a car within second
-                      </li>
-                      <li className='mb-2'>
-                        <span className='fa-li'>
-                          <i className='fas fa-check' />
-                        </span>
-                        Autocar tasks ready
+                        Upload & sell your car within second
                       </li>
                       <li className='mb-2'>
                         <span className='fa-li'>
@@ -49,7 +42,7 @@ const OurFeature = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className='col-lg-6 red success-color py-5 px-md-5'>
+                  <div className='col-md-6 red success-color py-5 px-md-5'>
                     <h4 className='font-weight-bold text-white ml-3 mb-4 pb-2'>
                       Makes money for cars
                     </h4>
@@ -72,12 +65,6 @@ const OurFeature = () => {
                         </span>
                         High possibility of selling car
                       </li>
-                      <li className='mb-2'>
-                        <span className='fa-li'>
-                          <i className='fas fa-check' />
-                        </span>
-                        Ability to register from the landing page
-                      </li>
                       <li>
                         <span className='fa-li'>
                           <i className='fas fa-check' />
@@ -89,11 +76,9 @@ const OurFeature = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        {/* Grid row */}
+          </Col>
+        </Row>
       </section>
-      {/*Section: Content*/}
       <br/>
       <br/>
     </div>
