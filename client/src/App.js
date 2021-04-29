@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import Detail from "./pages/Detail";
+import Sell from "./pages/Sell";
 import NoMatch from "./pages/NoMatch";
+
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
@@ -12,11 +13,11 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path={["/", "/Home"]}>
+          <Route exact path={["/", "/home"]}>
             <Home />
           </Route>
-          <Route exact path="/books/:id">
-            <Detail />
+          <Route exact path={["/sell"]}>
+            <Sell />
           </Route>
           <Route>
             <NoMatch />

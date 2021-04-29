@@ -94,6 +94,8 @@ const OurFeature = () => {
         {/* Grid row */}
       </section>
       {/*Section: Content*/}
+      <br/>
+      <br/>
     </div>
   );
 };
