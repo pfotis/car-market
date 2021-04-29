@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Sell from "./pages/Sell";
+import Buy from "./pages/Buy";
 import NoMatch from "./pages/NoMatch";
 
 import Nav from "./components/Nav";
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route exact path={["/sell"]}>
             <Sell />
+          </Route>
+          <Route exact path={["/buy"]}>
+            <Buy />
           </Route>
           <Route>
             <NoMatch />

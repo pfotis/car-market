@@ -1,10 +1,16 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">Car Market</a>
+    <NavLink
+      to="/"
+      className="navbar-brand"
+    >
+      Car Market
+    </NavLink>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -15,17 +21,41 @@ function Nav() {
             Menu
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="#">Buy</a></li>
-            <li><a className="dropdown-item" href="#">Sell</a></li>
+            <li><NavLink
+                to="/buy"
+                className="dropdown-item"
+              >
+                Buy
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/sell"
+                className="dropdown-item"
+              >
+                Sell
+              </NavLink>
+              {/* <a className="dropdown-item" href="/sell">Sell</a> */}
+            </li>
             <li><hr className="dropdown-divider"/></li>
             <li><a className="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">About Cars</a>
+          <NavLink
+            to="/carmarket"
+            className="nav-link"
+          >
+            About Car Market
+          </NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Contact</a>
+        <NavLink
+            to="/contact"
+            className="nav-link"
+          >
+            Contact
+          </NavLink>
         </li>
       </ul>
     </div>
