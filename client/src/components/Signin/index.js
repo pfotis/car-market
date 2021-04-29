@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Col } from "../Grid";
+import "./style.css";
 
 export default class Login extends Component {
     render() {
         return (
-            <form>
+            <form className="signin">
                 <Col size="md-6">
                     <h3>Log in</h3>
 

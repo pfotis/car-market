@@ -16,5 +16,13 @@ export default {
   // Saves a car to the database
   saveCar: function(carData) {
     return axios.post("/api/cars", carData);
-  }
+  },
+  // Saves a user to the database
+  saveUser: function(userData) {
+    return axios.post("/api/cars", userData);
+  },
+  // Gets all users
+  getUsers: function() {
+    return axios.get("/api/users");
+  },
 };

@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-import { Row, Container } from "../components/Grid";
+import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 
 
 function Contact() {
   
-    return (
-      <Container fluid>
-        <Jumbotron>Under of Constraction !</Jumbotron>
-      </Container>
+  return (
+    <Container fluid>
+      <Row>
+        <Col size="md-12">
+          <Jumbotron>
+            <h1>Contact under contstaction !</h1>
+            <h1>
+              <span role="img" aria-label="Face With Rolling Eyes Emoji">
+                🙄
+              </span>
+            </h1>
+          </Jumbotron>
+        </Col>
+      </Row>
+    </Container>
     );
   }
 
