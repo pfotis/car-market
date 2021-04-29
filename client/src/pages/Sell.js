@@ -6,7 +6,7 @@ function Sell() {
   
     return (
         <Container fluid>
-            <Col size="lg-5 sm-12">
+            <Col size="md-5 sm-12">
                 <form>
                     <br/>
                     <br/>
