@@ -25,7 +25,7 @@ function Nav() {
                 to="/buy"
                 className="dropdown-item"
               >
-                Buy
+                Cars For Sale
               </NavLink>
             </li>
             <li>
@@ -33,28 +33,43 @@ function Nav() {
                 to="/sell"
                 className="dropdown-item"
               >
-                Sell
+                Sell My Car
               </NavLink>
               {/* <a className="dropdown-item" href="/sell">Sell</a> */}
             </li>
             <li><hr className="dropdown-divider"/></li>
-            <li><a className="dropdown-item" href="#">Something else here</a></li>
+            <li>
+              <NavLink
+                to="/about"
+                className="dropdown-item"
+              >
+                About Car Market
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className="dropdown-item"
+              >
+                Contact
+              </NavLink>
+            </li>
           </ul>
         </li>
         <li className="nav-item">
           <NavLink
-            to="/about"
+            to="/signin"
             className="nav-link"
           >
-            About Car Market
+            Sign in
           </NavLink>
         </li>
         <li className="nav-item">
         <NavLink
-            to="/contact"
+            to="/signup"
             className="nav-link"
           >
-            Contact
+            Sign Up
           </NavLink>
         </li>
       </ul>
