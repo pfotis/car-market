@@ -1,10 +1,11 @@
 import React from "react";
+import { Row } from  "../Grid";
 
 function Footer() {
   return (
-    <footer className="page-footer font-small blue pt-4">
+    <footer className="page-footer font-small mdb-color grey pt-4">
         <div className="container-fluid text-center text-md-left">
-            <div className="row">
+            <Row>
                 <div className="col-md-6 mt-md-0 mt-3">
                     <h5 className="text-uppercase">Footer Content</h5>
                     <p>Here you can use rows and columns to organize your footer content.</p>
@@ -49,7 +50,7 @@ function Footer() {
                     </li>
                     </ul>
                 </div>
-            </div>
+            </Row>
         </div>
         <div className="footer-copyright text-center py-3">© 2020 Copyright:
             <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>

@@ -26,6 +26,7 @@
     "car-dealer-app": "^0.1.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
+    "mdbreact": "^5.0.2",
     "mongoose": "^5.3.16",
     "react-apollo": "^3.1.5",
     "react-social-icons": "^5.1.1"
