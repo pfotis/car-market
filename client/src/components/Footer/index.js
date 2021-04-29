@@ -15,7 +15,11 @@ function Footer() {
                     <h5 className="text-uppercase">Links</h5>
                     <ul className="list-unstyled">
                     <li>
-                        <a href="#!">Link 1</a>
+                    <a className='gplus-ic'>
+                <i className='fab fa-github-g fa-lg white-text mr-md-5 mr-3 fa-2x'>
+                  {' '}
+                </i>
+              </a>
                     </li>
                     <li>
                         <a href="#!">Link 2</a>

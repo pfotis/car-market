@@ -20,10 +20,14 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "antd": "^4.15.3",
+    "axios": "^0.18.1",
     "bootstrap": "^5.0.0-beta3",
+    "car-dealer-app": "^0.1.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
-    "mongoose": "^5.3.16"
+    "mongoose": "^5.3.16",
+    "react-apollo": "^3.1.5",
+    "react-social-icons": "^5.1.1"
   }
 }
