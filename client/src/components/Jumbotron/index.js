@@ -1,14 +1,14 @@
 import React from "react";
 
-function Label({ children }) {
+function Jumbotron({ children }) {
   return (
     <div className="form-group">
-      <label for="exampleFormControlInput1">
-        { children }
-      </label>
-      <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+        <label for="exampleFormControlInput1">
+            { children }
+        </label>
+        <input className="form-control" id="exampleFormControlInput1"/>
     </div>
   );
 }
 
-export default Label;
+export default Jumbotron;

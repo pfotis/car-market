@@ -35,7 +35,6 @@ function Nav() {
               >
                 Sell My Car
               </NavLink>
-              {/* <a className="dropdown-item" href="/sell">Sell</a> */}
             </li>
             <li><hr className="dropdown-divider"/></li>
             <li>

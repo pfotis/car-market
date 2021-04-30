@@ -25,3 +25,19 @@ export function FormBtn(props) {
     </button>
   );
 }
+
+export function FormInput(props) {
+  return (
+    <div class="form-group">
+      <label for={props.name}>{props.label}</label>
+      <input 
+        type={props.type} 
+        name= {props.name} 
+        class="form-control" 
+        id={props.name} 
+        placeholder={props.placeholder}
+        onChange={() => props.handleInputChange()}
+      />
+    </div>
+  );
+}

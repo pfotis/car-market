@@ -26,12 +26,18 @@ const carSchema = new Schema({
     type: String,
     required: true
   },
-  dateOfPurchase: {
+  yearOfPurchase: {
     type: Date,
-    default: Date.now
+    default: Date.now,
+    required: true
   },
   kilometers: {
     type: Number,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
   }
 });
 

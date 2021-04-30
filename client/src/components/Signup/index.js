@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
-import { Col } from "../Grid";
+import { Col, Row } from "../Grid";
 import { Input, FormBtn } from "../Form";
  
 function Signup() {
@@ -41,32 +41,33 @@ function Signup() {
       };
 
     return (
-        <form>
-            <Col size="md-6">
+        <form className="signup"> 
+            <Col size="md-6 sm-12">
                 <h3>Register</h3>
-
-                <div className="form-group">
-                    <label>First name</label>
-                    <Input 
-                        onChange={handleInputChange}
-                        name="firstname"
-                        placeholder="First name (required)"
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label>Last name</label>
-                    {/* <input type="text" className="form-control" placeholder="Last name" /> */}
-                    <Input 
-                        onChange={handleInputChange}
-                        name="lastname"
-                        placeholder="Last name (required)"
-                    />
-                </div>
-
+                <Row>
+                    <Col size="md-6 sm-12">
+                        <div className="form-group">
+                            <label>First name</label>
+                            <Input 
+                                onChange={handleInputChange}
+                                name="firstname"
+                                placeholder="First name (required)"
+                            />
+                        </div>
+                    </Col>
+                    <Col size="md-6 sm-12">
+                        <div className="form-group">
+                            <label>Last name</label>
+                            <Input 
+                                onChange={handleInputChange}
+                                name="lastname"
+                                placeholder="Last name (required)"
+                            />
+                        </div>
+                    </Col>
+                </Row>
                 <div className="form-group">
                     <label>Email</label>
-                    {/* <input type="email" className="form-control" placeholder="Enter email" /> */}
                     <Input 
                         onChange={handleInputChange}
                         name="email"
@@ -76,7 +77,6 @@ function Signup() {
 
                 <div className="form-group">
                     <label>Password</label>
-                    {/* <input type="password" className="form-control" placeholder="Enter password" /> */}
                     <Input 
                         onChange={handleInputChange}
                         name="password"
@@ -84,7 +84,6 @@ function Signup() {
                     />
                 </div>
 
-                {/* <button type="submit" className="btn btn-dark btn-block">Register</button> */}
                 <FormBtn
                     disabled={!(formObject.email && formObject.password && formObject.lastname && formObject.firstname)}
                     onClick={handleFormSubmit}
