@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { Col, Row } from "../Grid";
 import { Input, FormBtn } from "../Form";
+import "./style.css";
  
 function Signup() {
 

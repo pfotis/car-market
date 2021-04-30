@@ -16,12 +16,24 @@ function Footer() {
                 <div className="col-md-4 mb-md-0 mb-3">
                     <h5 className="text-uppercase"></h5>
                     <ul className="list-unstyled">
-                    <li>
-                        <a href="https://www.linkedin.com/in/peter-fotis-6a740a11a/" target="_blank"><i className="fab fa-linkedin-in fa-2x"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/pfotis" target="_blank"><i className="fab fa-github fa-2x"></i></a>
-                    </li>
+                        <li>
+                            <a href="#" target="_blank"><i className="fab fa-twitch fa-2x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><i className="fab fa-youtube fa-2x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><i className="fab fa-google fa-2x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><i className="fab fa-twitter fa-2x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><i className="fab fa-instagram fa-2x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank"><i className="fab fa-facebook fa-2x"></i></a>
+                        </li>
                     </ul>
                 </div>
             </Row>
