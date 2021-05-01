@@ -45,6 +45,8 @@ function Signup() {
         <form className="signup"> 
             <Col size="md-6 sm-12">
                 <h3>Register</h3>
+                <br/>
+                <br/>
                 <Row>
                     <Col size="md-6 sm-12">
                         <div className="form-group">
@@ -78,11 +80,7 @@ function Signup() {
 
                 <div className="form-group">
                     <label>Password</label>
-                    <Input 
-                        onChange={handleInputChange}
-                        name="password"
-                        placeholder="Enter password (required)"
-                    />
+                    <input type="password" className="form-control" placeholder="Enter password (required)" />
                 </div>
 
                 <FormBtn

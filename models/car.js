@@ -18,15 +18,11 @@ const carSchema = new Schema({
     type: String,
     required: true
   },
-  type: {
+  bodyType: {
     type: String,
     required: true
   },
-  description: {
-    type: String,
-    required: true
-  },
-  yearOfPurchase: {
+  dateOfPurchase: {
     type: Date,
     default: Date.now,
     required: true
@@ -36,6 +32,14 @@ const carSchema = new Schema({
     required: true
   },
   email: {
+    type: String,
+    required: true
+  },
+  postcode: {
+    type: Number,
+    required: true
+  },
+  stateAU: {
     type: String,
     required: true
   }

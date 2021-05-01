@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 // This file exports the Input, TextArea, and FormBtn components
 
@@ -20,7 +21,7 @@ export function TextArea(props) {
 
 export function FormBtn(props) {
   return (
-    <button {...props} className="btn btn-dark btn-lg btn-block">
+    <button {...props} className="btn btn-dark btn-lg btn-block styleButton">
       {props.children}
     </button>
   );

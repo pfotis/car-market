@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import API from "../utils/API";
 import { Col, Row } from "../components/Grid";
-import { Input, FormBtn } from "../components/Form";
+import { Input, FormBtn, FormInput } from "../components/Form";
 import "./style.css";
 
 
@@ -31,7 +31,7 @@ function Sell() {
     function handleFormSubmit(event) {
         event.preventDefault();
         if (formObject.email && formObject.password) {
-          API.saveUser({
+          API.saveCar({
             firstname: formObject.firstname,
             lastname: formObject.lastname,
             email: formObject.email,
@@ -46,9 +46,11 @@ function Sell() {
         <form className="space"> 
             <Col size="md-6 sm-12">
                 <h3>Form</h3>
+                <br/>
+                <br/>
                 <div className="form-group">
-                    <label for="exampleFormControlSelect1">Body Type</label>
-                    <select className="form-control" id="exampleFormControlSelect1">
+                    <label for="bodyType">Body Type</label>
+                    <select className="form-control" name="bodyType" >
                         <option>SUV</option>
                         <option>Sedan</option>
                         <option>Wagon</option>
@@ -59,58 +61,95 @@ function Sell() {
                 </div>
                 <Row>
                     <Col size="md-6 sm-12">
-                        <div className="form-group">
-                            <label>Brand</label>
-                            <Input 
-                                onChange={handleInputChange}
-                                name="brand"
-                                placeholder="example : BMW"
-                            />
-                        </div>
+                        <FormInput
+                            label="Brand"
+                            name="brand"
+                            type="text"
+                            placeholder="example: BMW"
+                            handleInputChange={handleInputChange}
+                        />
+                    </Col>
+                    <Col size="md-6 sm-12">
+                        <FormInput
+                            label="Model"
+                            name="model"
+                            type="text"
+                            placeholder="example: X4"
+                            handleInputChange={handleInputChange}
+                        />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size="md-6 sm-12">
+                        <FormInput
+                            label="Date of Purchase"
+                            name="dateOfPurchase"
+                            type="date"
+                            placeholder=""
+                            handleInputChange={handleInputChange}
+                        />
+                    </Col>
+                    <Col size="md-6 sm-12">
+                        <FormInput
+                            label="Price"
+                            name="price"
+                            type="text"
+                            placeholder="example: 20000"
+                            handleInputChange={handleInputChange}
+                        />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size="md-6 sm-12">
+                        <FormInput
+                            label="Kilometers"
+                            name="kilometers"
+                            type="text"
+                            placeholder="example: 179000"
+                            handleInputChange={handleInputChange}
+                        />
+                    </Col>
+                    <Col size="md-6 sm-12">
+                        <FormInput
+                            label="Email"
+                            name="email"
+                            type="email"
+                            placeholder="example@email.com"
+                            handleInputChange={handleInputChange}
+                        />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size="md-6 sm-12">
+                        <FormInput
+                            label="Postcode"
+                            name="postcode"
+                            type="text"
+                            placeholder="example: 3204"
+                            handleInputChange={handleInputChange}
+                        />
                     </Col>
                     <Col size="md-6 sm-12">
                         <div className="form-group">
-                            <label>Model</label>
-                            <Input 
-                                onChange={handleInputChange}
-                                name="model"
-                                placeholder="example : X4"
-                            />
-                        </div>
+                        <label for="stateAU">State</label>
+                        <select className="form-control" name="stateAU" >
+                            <option>NSW</option>
+                            <option>VIC</option>
+                            <option>QLD</option>
+                            <option>SA</option>
+                            <option>TAS</option>
+                            <option>ACT</option>
+                            <option>NT</option>
+                        </select>
+                </div>
                     </Col>
                 </Row>
-                <div className="form-group">
-                    <label>Email</label>
-                    <Input 
-                        onChange={handleInputChange}
-                        name="email"
-                        placeholder="Enter email (required)"
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label>Password</label>
-                    <Input 
-                        onChange={handleInputChange}
-                        name="password"
-                        placeholder="Enter password (required)"
-                    />
-                </div>
-
                 <FormBtn
                     disabled={!(formObject.email && formObject.password && formObject.lastname && formObject.firstname)}
                     onClick={handleFormSubmit}
                 >
-                    Register
+                    Submit
                 </FormBtn>
-                <p className="forgot-password text-right">
-                    Already registered  
-                    <Link
-                        to="/signin"
-                    >
-                        sign in
-                    </Link>
-                </p>
             </Col>
         </form>
     );
