@@ -1,56 +1,119 @@
 import React, { useState, useEffect } from "react";
-import { Col, Container } from "../components/Grid";
-import { FormInput } from "../components/Form";
-import listInputs from "../sellFormInput.json";
-import { Component } from "react";
+import { Link } from "react-router-dom";
+import API from "../utils/API";
+import { Col, Row } from "../components/Grid";
+import { Input, FormBtn } from "../components/Form";
+import "./style.css";
 
-class Sell extends Component {
 
-    state = {
-        listInputs
-      };
-      
-    // const [cars, setUsers] = useState([])
-    // const [formObject, setFormObject] = useState({})
+function Sell() {
 
-    handleInputChange = (event) => {
-        const { name, value } = event.target;
-        // setFormObject({...formObject, [name]: value})
+    const [users, setUsers] = useState([])
+    const [formObject, setFormObject] = useState({})
+
+    useEffect(() => {
+        loadUsers()
+      }, [])
+
+    function loadUsers() {
+        API.getUsers()
+            .then(res => 
+            setUsers(res.data)
+            )
+            .catch(err => console.log(err));
     };
-    render() {
-        return (
-            <Container fluid>
-                <Col size="md-5 sm-12">
-                    <form>
-                        <br/>
-                        <br/>
+
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+        setFormObject({...formObject, [name]: value})
+    };
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        if (formObject.email && formObject.password) {
+          API.saveUser({
+            firstname: formObject.firstname,
+            lastname: formObject.lastname,
+            email: formObject.email,
+            password: formObject.password
+          })
+            .then(res => loadUsers())
+            .catch(err => console.log(err));
+        }
+      };
+
+    return (
+        <form className="space"> 
+            <Col size="md-6 sm-12">
+                <h3>Form</h3>
+                <div className="form-group">
+                    <label for="exampleFormControlSelect1">Body Type</label>
+                    <select className="form-control" id="exampleFormControlSelect1">
+                        <option>SUV</option>
+                        <option>Sedan</option>
+                        <option>Wagon</option>
+                        <option>Hatch</option>
+                        <option>Ute</option>
+                        <option>Convertible</option>
+                    </select>
+                </div>
+                <Row>
+                    <Col size="md-6 sm-12">
                         <div className="form-group">
-                            <label for="exampleFormControlSelect1">Body Type</label>
-                            <select className="form-control" id="exampleFormControlSelect1">
-                            <option>SUV</option>
-                            <option>Sedan</option>
-                            <option>Wagon</option>
-                            <option>Hatch</option>
-                            <option>Ute</option>
-                            <option>Convertible</option>
-                            </select>
-                        </div>
-                        {this.state.listInputs.map(listInput => (
-                            <FormInput
-                                handleInputChange={this.handleInputChange}
-                                name={listInput.name}
-                                type={listInput.type}
-                                label={listInput.label}
-                                placeholder={listInput.placeholder}
+                            <label>Brand</label>
+                            <Input 
+                                onChange={handleInputChange}
+                                name="brand"
+                                placeholder="example : BMW"
                             />
-                        ))}
-                        <br/>
-                        <br/>
-                    </form>
-                </Col>
-        </Container>
-        );
-    }
+                        </div>
+                    </Col>
+                    <Col size="md-6 sm-12">
+                        <div className="form-group">
+                            <label>Model</label>
+                            <Input 
+                                onChange={handleInputChange}
+                                name="model"
+                                placeholder="example : X4"
+                            />
+                        </div>
+                    </Col>
+                </Row>
+                <div className="form-group">
+                    <label>Email</label>
+                    <Input 
+                        onChange={handleInputChange}
+                        name="email"
+                        placeholder="Enter email (required)"
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Password</label>
+                    <Input 
+                        onChange={handleInputChange}
+                        name="password"
+                        placeholder="Enter password (required)"
+                    />
+                </div>
+
+                <FormBtn
+                    disabled={!(formObject.email && formObject.password && formObject.lastname && formObject.firstname)}
+                    onClick={handleFormSubmit}
+                >
+                    Register
+                </FormBtn>
+                <p className="forgot-password text-right">
+                    Already registered  
+                    <Link
+                        to="/signin"
+                    >
+                        sign in
+                    </Link>
+                </p>
+            </Col>
+        </form>
+    );
   }
 
 
