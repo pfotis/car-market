@@ -10,7 +10,6 @@ export default class Login extends Component {
                 <Col size="md-6 sm-12">
                     <h3>Log in</h3>
                     <br/>
-                    <br/>
                     <div className="form-group">
                         <label>Email</label>
                         <input type="email" className="form-control" placeholder="Enter email" />

@@ -1,15 +1,41 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 import API from "../utils/API";
 import { Col, Row } from "../components/Grid";
 import { Input, FormBtn, FormInput } from "../components/Form";
 import "./style.css";
+
+require('dotenv').config();
 
 
 function Sell() {
 
     const [users, setUsers] = useState([])
     const [formObject, setFormObject] = useState({})
+    const [loading,setLoading] = useState(false)
+    const [image,setImage] = useState("")
+
+    const uploadImage = async e => {
+        const files = e.target.files
+        const data = new FormData()
+        data.append('file',files[0])
+        data.append('upload_preset', 'carmarket')
+        setLoading(true)
+
+        const apiKey = process.env.REACT_APP_API_KEY;
+        const res = await fetch(`https://api.cloudinary.com/v1_1/${apikey}/image/upload`, 
+        {
+            method:'POST',
+            body:data
+        })
+        const file = await res.json();
+
+        console.log(file);
+
+        setImage(file.secure_url)
+        setLoading(false)
+    };
 
     useEffect(() => {
         loadUsers()
@@ -30,7 +56,6 @@ function Sell() {
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        if (formObject.email && formObject.password) {
           API.saveCar({
             firstname: formObject.firstname,
             lastname: formObject.lastname,
@@ -39,14 +64,14 @@ function Sell() {
           })
             .then(res => loadUsers())
             .catch(err => console.log(err));
-        }
       };
+    
+      
 
     return (
         <form className="space"> 
             <Col size="md-6 sm-12">
                 <h3>Form</h3>
-                <br/>
                 <br/>
                 <div className="form-group">
                     <label for="bodyType">Body Type</label>
@@ -144,6 +169,23 @@ function Sell() {
                 </div>
                     </Col>
                 </Row>
+                <div className="imageURL">
+                    <p>Upload Image</p>
+                    <input
+                        type="file"
+                        name="file"
+                        placeholder="Upload an Image"
+                        onChange={uploadImage}
+                    />
+                    {
+                        loading?(
+                            <h3>loading...</h3>
+                        ):(
+                            <img src={image} alt={image} style={{width:'300px'}}/>
+                        )
+                    }
+
+                </div>
                 <FormBtn
                     disabled={!(formObject.email && formObject.password && formObject.lastname && formObject.firstname)}
                     onClick={handleFormSubmit}

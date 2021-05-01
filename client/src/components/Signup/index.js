@@ -46,7 +46,6 @@ function Signup() {
             <Col size="md-6 sm-12">
                 <h3>Register</h3>
                 <br/>
-                <br/>
                 <Row>
                     <Col size="md-6 sm-12">
                         <div className="form-group">
