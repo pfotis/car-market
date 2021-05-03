@@ -181,7 +181,7 @@ function Sell() {
                         loading?(
                             <h3>loading...</h3>
                         ):(
-                            <img src={image} alt={image} style={{width:'300px'}}/>
+                            <img src={image} style={{width:'300px'}}/>
                         )
                     }
 
