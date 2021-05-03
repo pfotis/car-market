@@ -12,9 +12,11 @@ require('dotenv').config();
 function Sell() {
 
     const [users, setUsers] = useState([])
-    const [formObject, setFormObject] = useState({})
+    const [formObject, setFormObject] = useState({
+        stateAU:"NSW"
+    })
     const [loading,setLoading] = useState(false)
-    const [image,setImage] = useState("")
+    const [image,setImage] = useState([])
 
     const uploadImage = async e => {
         const files = e.target.files
@@ -31,8 +33,8 @@ function Sell() {
         const file = await res.json();
 
         console.log(file);
-
-        setImage(file.secure_url)
+        const images = [...image, file.secure_url]
+        setImage(images)
         setLoading(false)
     };
 
@@ -50,16 +52,24 @@ function Sell() {
 
     function handleInputChange(event) {
         const { name, value } = event.target;
+
+        console.log(name , value);
         setFormObject({...formObject, [name]: value})
     };
 
     function handleFormSubmit(event) {
         event.preventDefault();
           API.saveCar({
-            firstname: formObject.firstname,
-            lastname: formObject.lastname,
+            bodyType: formObject.bodyType,
+            brand: formObject.brand,
+            model: formObject.model,
+            dateOfPurchase: formObject.dateOfPurchase,
+            price: formObject.price,
+            kilometers: formObject.kilometers,
             email: formObject.email,
-            password: formObject.password
+            postcode: formObject.postcode,
+            stateAU: formObject.stateAU,
+            images: image
           })
             .then(res => loadUsers())
             .catch(err => console.log(err));
@@ -74,7 +84,9 @@ function Sell() {
                 <br/>
                 <div className="form-group">
                     <label for="bodyType">Body Type</label>
-                    <select className="form-control" name="bodyType" >
+                    <select className="form-control" name="bodyType" 
+                        onChange={handleInputChange}
+                    >
                         <option>SUV</option>
                         <option>Sedan</option>
                         <option>Wagon</option>
@@ -156,7 +168,9 @@ function Sell() {
                     <Col size="md-6 sm-12">
                         <div className="form-group">
                         <label for="stateAU">State</label>
-                        <select className="form-control" name="stateAU" >
+                        <select className="form-control" name="stateAU" 
+                            onChange={handleInputChange}
+                        >
                             <option>NSW</option>
                             <option>VIC</option>
                             <option>QLD</option>
@@ -172,9 +186,10 @@ function Sell() {
                     <p>Upload Image</p>
                     <input
                         type="file"
-                        name="file"
+                        name="imageUrl"
                         placeholder="Upload an Image"
                         onChange={uploadImage}
+                        handleInputChange={handleInputChange}
                     />
                     {
                         loading?(
@@ -186,7 +201,6 @@ function Sell() {
 
                 </div>
                 <FormBtn
-                    disabled={!(formObject.email && formObject.password && formObject.lastname && formObject.firstname)}
                     onClick={handleFormSubmit}
                 >
                     Submit

@@ -14,10 +14,9 @@ const carSchema = new Schema({
     type: Number,
     required: true
   },
-  imageUrl: {
-    type: String,
-    required: true
-  },
+  images: [{
+    type: String
+  }],
   bodyType: {
     type: String,
     required: true
@@ -46,4 +45,5 @@ const carSchema = new Schema({
 });
 
 const Car = mongoose.model("Car", carSchema);
+module.exports = Car;
 
