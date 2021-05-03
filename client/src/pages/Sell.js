@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 import API from "../utils/API";
 import { Col, Row } from "../components/Grid";
-import { Input, FormBtn, FormInput } from "../components/Form";
+import { FormBtn, FormInput } from "../components/Form";
 import "./style.css";
 
 require('dotenv').config();
@@ -11,7 +11,14 @@ require('dotenv').config();
 
 function Sell() {
 
-    const [users, setUsers] = useState([])
+    const [count, dispatch] = useReducer((state, action) => {
+        if (action === "subtract") {
+            return state - 1;
+          } else {
+            return state;
+          }
+      }, 5);
+    
     const [formObject, setFormObject] = useState({
         stateAU:"NSW"
     })
@@ -38,18 +45,6 @@ function Sell() {
         setLoading(false)
     };
 
-    useEffect(() => {
-        loadUsers()
-      }, [])
-
-    function loadUsers() {
-        API.getUsers()
-            .then(res => 
-            setUsers(res.data)
-            )
-            .catch(err => console.log(err));
-    };
-
     function handleInputChange(event) {
         const { name, value } = event.target;
 
@@ -71,7 +66,7 @@ function Sell() {
             stateAU: formObject.stateAU,
             images: image
           })
-            .then(res => loadUsers())
+            .then(res => console.log(res))
             .catch(err => console.log(err));
       };
     
@@ -184,22 +179,27 @@ function Sell() {
                 </Row>
                 <div className="imageURL">
                     <p>Upload Image</p>
+                    <p>You could upload {count} images</p>
                     <input
                         type="file"
                         name="imageUrl"
                         placeholder="Upload an Image"
                         onChange={uploadImage}
                         handleInputChange={handleInputChange}
+                        onClick={() => dispatch("subtract")}
+                        disabled={count == 0}
                     />
                     {
                         loading?(
                             <h3>loading...</h3>
                         ):(
-                            <img src={image} style={{width:'300px'}}/>
+                            <img src={image} style={{width:'100px'}}/>
                         )
                     }
 
                 </div>
+                <br/>
+                <br/>
                 <FormBtn
                     onClick={handleFormSubmit}
                 >
