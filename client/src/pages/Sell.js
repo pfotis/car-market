@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useReducer } from "react";
-import { Link } from "react-router-dom";
-import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 import API from "../utils/API";
 import { Col, Row } from "../components/Grid";
 import { FormBtn, FormInput } from "../components/Form";
@@ -11,19 +9,22 @@ require('dotenv').config();
 
 function Sell() {
 
+    const [cars, setCars] = useState([])
     const [count, dispatch] = useReducer((state, action) => {
         if (action === "subtract") {
             return state - 1;
           } else {
             return state;
           }
-      }, 5);
+      }, 6);
     
     const [formObject, setFormObject] = useState({
+        bodyType:"SUV",
         stateAU:"NSW"
     })
     const [loading,setLoading] = useState(false)
     const [image,setImage] = useState([])
+    const [viewImg,setviewImg] = useState() 
 
     const uploadImage = async e => {
         const files = e.target.files
@@ -41,9 +42,23 @@ function Sell() {
 
         console.log(file);
         const images = [...image, file.secure_url]
+        setviewImg(file.secure_url)
         setImage(images)
         setLoading(false)
     };
+
+    useEffect(() => {
+        loadCars()
+      }, [])
+
+    function loadCars() {
+        API.getCars()
+            .then(res => 
+            setCars(res.data)
+            )
+            .catch(err => console.log(err));
+    };
+
 
     function handleInputChange(event) {
         const { name, value } = event.target;
@@ -66,7 +81,7 @@ function Sell() {
             stateAU: formObject.stateAU,
             images: image
           })
-            .then(res => console.log(res))
+            .then(res => loadCars())
             .catch(err => console.log(err));
       };
     
@@ -179,7 +194,7 @@ function Sell() {
                 </Row>
                 <div className="imageURL">
                     <p>Upload Image</p>
-                    <p>You could upload {count} images</p>
+                    <p>You could upload {count-1} images</p>
                     <input
                         type="file"
                         name="imageUrl"
@@ -193,7 +208,7 @@ function Sell() {
                         loading?(
                             <h3>loading...</h3>
                         ):(
-                            <img src={image} style={{width:'100px'}}/>
+                            <img src={viewImg} style={{width:'100px'}}/>
                         )
                     }
 

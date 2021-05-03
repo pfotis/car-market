@@ -30,7 +30,7 @@ export function FormBtn(props) {
 export function FormInput({ name, label, handleInputChange, type, placeholder }) {
   return (
     <div class="form-group">
-      <label for={name}>{label}</label>
+      <label>{label}</label>
       <input 
         type={type} 
         name= {name} 
