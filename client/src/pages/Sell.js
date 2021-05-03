@@ -23,8 +23,7 @@ function Sell() {
         data.append('upload_preset', 'carmarket')
         setLoading(true)
 
-        const apiKey = process.env.REACT_APP_API_KEY;
-        const res = await fetch(`https://api.cloudinary.com/v1_1/${apikey}/image/upload`, 
+        const res = await fetch(`https://api.cloudinary.com/v1_1/dtb5q972s/image/upload`, 
         {
             method:'POST',
             body:data
