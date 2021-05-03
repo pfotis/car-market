@@ -34,6 +34,7 @@
     "if-env": "^1.0.4",
     "mdbreact": "^5.0.2",
     "mongoose": "^5.3.16",
+    "react-bootstrap": "^1.5.2",
     "react-social-icons": "^5.1.1"
   }
 }
