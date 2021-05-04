@@ -25,19 +25,21 @@ function Buy() {
       <Row>
         <Col size="md-12">
           {cars.map(car => (
-            //  <Card
-            //   brand = {car.brand}
-            //   model = {car.model}
-            //   stateAU = {car.stateAU}
-            //   _id = {car._id}
-            //   // images = {car.images}
-            // />
-            <div>
-              {car.brand},{car.model},
-               {car.stateAU},
-               {car._id},
-               {car.images},
-           </div>
+             <Card
+              brand = {car.brand}
+              model = {car.model}
+              stateAU = {car.stateAU}
+              // _id = {car._id}
+              images = {car.images}
+              key = {car._id}
+            />
+          //   <div>
+          //     {car.brand},{car.model},
+          //      {car.stateAU},
+          //      {car._id},
+          //      {car.images},
+               
+          //  </div>
           ))}
         </Col>
       </Row>
