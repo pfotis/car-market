@@ -4,7 +4,7 @@ import { Container, Row } from "../components/Grid";
 function ContactForm() {
   return (
     <Container>
-      <section className="content">
+      <section className="content space">
         <Row>
           <div className="col-md-12 midsection">
             <h2>Contact</h2>

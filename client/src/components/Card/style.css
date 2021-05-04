@@ -1,4 +1,9 @@
-img {
+.marketImage {
     height: 200px;
     width: 300px;
+}
+
+.marketCard {
+    margin-bottom: 40px;
+    margin-top: 40px;
 }

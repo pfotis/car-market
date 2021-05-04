@@ -7,7 +7,7 @@ const Card = ({brand, model, stateAU, images, _id }) => {
   let id = _id;
   return (
   
-    <div className="card" style={{width: '300px'}}>
+    <div className="card marketCard" style={{width: '300px'}}>
       <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
         {/* <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -19,7 +19,7 @@ const Card = ({brand, model, stateAU, images, _id }) => {
         <div className="carousel-inner">
           {images.map(image => (
             <div className="carousel-item active">
-              <img src={image} className="d-block w-100" alt={image}/>
+              <img src={image} className="d-block w-100 marketImage" alt={image}/>
             </div>
           ))}
         </div>
@@ -36,7 +36,6 @@ const Card = ({brand, model, stateAU, images, _id }) => {
         <h3 className="card-title">{brand}</h3>
         <h6 className="card-title"><strong>model: </strong>{model}</h6>
         <h6 className="card-title"><strong>state: </strong>{stateAU}</h6>
-        {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
         <Link to={"/carsinmarket/" + id } className="btn btn-primary">
           <strong>more info</strong>
         </Link>
