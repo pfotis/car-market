@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Row } from  "../Grid";
 import "./style.css";
 
@@ -8,31 +9,29 @@ function Footer() {
         <div className="container-fluid text-center text-md-left">
             <Row>
                 <div className="col-md-8 mt-md-0 mt-3">
-                    <h5 className="text-uppercase">Footer Content</h5>
-                    <p>Here you can use rows and columns to organize your footer content.</p>
+                    {/* <h5 className="text-uppercase">Footer Content</h5>
+                    <p>Here you can use rows and columns to organize your footer content.</p> */}
 
                 </div>
                 <hr className="clearfix w-100 d-md-none pb-3"/>
-                <div className="col-md-4 mb-md-0 mb-3">
+                <div className="col-md-12 mb-md-0 mb-3">
                     <h5 className="text-uppercase"></h5>
                     <ul className="list-unstyled">
                         <li>
-                            <a href="#" target="_blank"><i className="fab fa-twitch fa-2x"></i></a>
+                            <a href="https://www.facebook.com/" target="_blank"><i className="fab fa-facebook fa-2x"></i></a>
                         </li>
                         <li>
-                            <a href="#" target="_blank"><i className="fab fa-youtube fa-2x"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i className="fab fa-instagram fa-2x"></i></a>
                         </li>
                         <li>
-                            <a href="#" target="_blank"><i className="fab fa-google fa-2x"></i></a>
+                            <a href="https://twitter.com/?lang=en" target="_blank"><i className="fab fa-twitter fa-2x"></i></a>
                         </li>
                         <li>
-                            <a href="#" target="_blank"><i className="fab fa-twitter fa-2x"></i></a>
+
+                            <a href="https://www.twitch.tv/" target="_blank"><i className="fab fa-twitch fa-2x"></i></a>
                         </li>
                         <li>
-                            <a href="#" target="_blank"><i className="fab fa-instagram fa-2x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i className="fab fa-facebook fa-2x"></i></a>
+                            <a href="https://www.youtube.com/" target="_blank"><i className="fab fa-youtube fa-2x"></i></a>
                         </li>
                     </ul>
                 </div>

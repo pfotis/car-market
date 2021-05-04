@@ -1,28 +1,50 @@
-import React, { useState, useEffect } from "react";
-import API from "../utils/API";
-import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
+import React from "react";
+import { Container, Row } from "../components/Grid";
 
-
-function Contact() {
-  
+function ContactForm() {
   return (
-    <Container fluid>
-      <Row>
-        <Col size="md-12">
-          <Jumbotron>
-            <h1>Contact under contstaction !</h1>
-            <h1>
-              <span role="img" aria-label="Face With Rolling Eyes Emoji">
-                🙄
-              </span>
-            </h1>
-          </Jumbotron>
-        </Col>
-      </Row>
+    <Container>
+      <section className="content">
+        <Row>
+          <div className="col-md-12 midsection">
+            <h2>Contact</h2>
+            <form>
+              <div className="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  className="form-control"
+                  placeholder="your name"
+                />
+              </div>
+              <div className="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  className="form-control"
+                  placeholder="example@email.com"
+                />
+              </div>
+              <div className="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  className="form-control"
+                  placeholder="Write a message"
+                  rows="8"
+                ></textarea>
+              </div>
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </form>
+          </div>
+        </Row>
+      </section>
     </Container>
-    );
-  }
+  );
+}
 
-
-export default Contact;
+export default ContactForm;

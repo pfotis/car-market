@@ -1,13 +1,32 @@
 import React from 'react';
 
-const Card = () => {
+const Card = ({brand, model, stateAU , _id, images}) => {
   return (
     <div className="card" style="width: 18rem;">
-      <img className="card-img-top" src="..." alt="Card image cap"/>
+      <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          {images.map(image => (
+            <div className="carousel-item active">
+              <img src={image} className="d-block w-100" alt={image}/>
+            </div>
+          ))}
+        </div>
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
+        <h3 className="card-title">{brand}</h3>
+        <h6 className="fas fa-car-side">model: {model}</h6>
+        <h6 className="card-title">state: {stateAU}</h6>
+        <Link to={"/cars/" + _id} className="btn btn-primary">
+          <strong>more info</strong>
+        </Link>
       </div>
     </div>
   );

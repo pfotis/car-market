@@ -97,6 +97,7 @@ function Sell() {
                     <select className="form-control" name="bodyType" 
                         onChange={handleInputChange}
                     >
+                        <option>choose body type</option>
                         <option>SUV</option>
                         <option>Sedan</option>
                         <option>Wagon</option>
@@ -181,6 +182,7 @@ function Sell() {
                         <select className="form-control" name="stateAU" 
                             onChange={handleInputChange}
                         >
+                            <option>choose state</option>
                             <option>NSW</option>
                             <option>VIC</option>
                             <option>QLD</option>
@@ -202,7 +204,7 @@ function Sell() {
                         onChange={uploadImage}
                         handleInputChange={handleInputChange}
                         onClick={() => dispatch("subtract")}
-                        disabled={count == 0}
+                        disabled={count === 0}
                     />
                     {
                         loading?(

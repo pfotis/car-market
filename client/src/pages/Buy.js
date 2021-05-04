@@ -5,7 +5,22 @@ import Jumbotron from "../components/Jumbotron";
 
 
 function Buy() {
+  const [cars, setCars] = useState([])
   
+  useEffect(() => {
+      loadCars()
+  }, [])
+
+  function loadCars() {
+    API.getCars()
+      .then(res =>{
+        setCars(res.data)
+        console.log(res.data);
+      })
+      .catch(err => console.log(err));
+  };
+
+
     return (
       <Container fluid>
       <Row>
