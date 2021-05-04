@@ -6,7 +6,6 @@ function Jumbotron({ children }) {
         <label for="exampleFormControlInput1">
             { children }
         </label>
-        <input className="form-control" id="exampleFormControlInput1"/>
     </div>
   );
 }

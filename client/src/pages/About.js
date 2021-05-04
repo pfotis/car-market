@@ -10,7 +10,7 @@ function About() {
       <Row>
         <Col size="md-12">
           <Jumbotron>
-            <h1>About under contstaction !</h1>
+            <h1>About under constraction !</h1>
             <h1>
               <span role="img" aria-label="Face With Rolling Eyes Emoji">
                 🙄

@@ -12,19 +12,19 @@ function Carousel() {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="./img/bmw.jpg" className="d-block w-100" alt="bmw"/>
+            <img src="./img/carousel/bmw.jpg" className="d-block w-100" alt="bmw"/>
           </div>
           <div className="carousel-item">
-            <img src="./img/volvo.jpg" className="d-block w-100" alt="volvo"/>
+            <img src="./img/carousel/volvo.jpg" className="d-block w-100" alt="volvo"/>
           </div>
           <div className="carousel-item">
-            <img src="./img/kia.jpg" className="d-block w-100" alt="kia"/>
+            <img src="./img/carousel/kia.jpg" className="d-block w-100" alt="kia"/>
           </div>
           <div className="carousel-item">
-            <img src="./img/lexus.jpg" className="d-block w-100" alt="lexus"/>
+            <img src="./img/carousel/lexus.jpg" className="d-block w-100" alt="lexus"/>
           </div>
           <div className="carousel-item">
-            <img src="./img/mercedes.jpg" className="d-block w-100" alt="mercedes"/>
+            <img src="./img/carousel/mercedes.jpg" className="d-block w-100" alt="mercedes"/>
           </div>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

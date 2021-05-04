@@ -7,6 +7,7 @@ import Buy from "./pages/Buy";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NoMatch from "./pages/NoMatch";
+import Detail from "./pages/Detail";
 
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route exact path={["/carsinmarket"]}>
             <Buy />
+          </Route>
+          <Route exact path="/carsinmarket/:id">
+            <Detail />
           </Route>
           <Route exact path={["/about"]}>
             <About />
