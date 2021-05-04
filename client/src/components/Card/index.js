@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import "./style.css";
 
 const Card = ({brand, model, stateAU, images, _id }) => {
   console.log(brand, model, stateAU, images, _id);
