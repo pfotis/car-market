@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
+import Card from "../components/Card";
 
 
 function Buy() {
@@ -20,19 +20,25 @@ function Buy() {
       .catch(err => console.log(err));
   };
 
-
     return (
       <Container fluid>
       <Row>
         <Col size="md-12">
-          <Jumbotron>
-            <h1>Buy under contstaction !</h1>
-            <h1>
-              <span role="img" aria-label="Face With Rolling Eyes Emoji">
-                🙄
-              </span>
-            </h1>
-          </Jumbotron>
+          {cars.map(car => (
+            //  <Card
+            //   brand = {car.brand}
+            //   model = {car.model}
+            //   stateAU = {car.stateAU}
+            //   _id = {car._id}
+            //   // images = {car.images}
+            // />
+            <div>
+              {car.brand},{car.model},
+               {car.stateAU},
+               {car._id},
+               {car.images},
+           </div>
+          ))}
         </Col>
       </Row>
     </Container>

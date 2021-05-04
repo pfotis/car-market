@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-const Card = ({brand, model, stateAU , _id, images}) => {
+const Card = ({brand,}) => {
   return (
     <div className="card" style="width: 18rem;">
       <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
-          {images.map(image => (
+          {/* {images.map(image => (
             <div className="carousel-item active">
               <img src={image} className="d-block w-100" alt={image}/>
             </div>
-          ))}
+          ))} */}
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -22,11 +23,11 @@ const Card = ({brand, model, stateAU , _id, images}) => {
       </div>
       <div className="card-body">
         <h3 className="card-title">{brand}</h3>
-        <h6 className="fas fa-car-side">model: {model}</h6>
-        <h6 className="card-title">state: {stateAU}</h6>
-        <Link to={"/cars/" + _id} className="btn btn-primary">
+        <h6 className="fas fa-car-side">model: </h6>
+        <h6 className="card-title">state:</h6>
+        {/* <Link to={"/cars/" + _id} className="btn btn-primary">
           <strong>more info</strong>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
