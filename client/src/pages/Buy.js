@@ -21,29 +21,23 @@ function Buy() {
   };
 
     return (
+      
       <Container fluid>
-      <Row>
-        <Col size="md-12">
+        <Row>
           {cars.map(car => (
-             <Card
-              brand = {car.brand}
-              model = {car.model}
-              stateAU = {car.stateAU}
-              // _id = {car._id}
-              images = {car.images}
-              key = {car._id}
-            />
-          //   <div>
-          //     {car.brand},{car.model},
-          //      {car.stateAU},
-          //      {car._id},
-          //      {car.images},
-               
-          //  </div>
+            <Col size="md-4 sm-12">
+              <Card
+                brand = {car.brand}
+                model = {car.model}
+                stateAU = {car.stateAU}
+                _id = {car._id}
+                images = {car.images}
+                key = {car._id}
+              />
+            </Col>
           ))}
-        </Col>
-      </Row>
-    </Container>
+        </Row>
+      </Container>
     );
   }
 

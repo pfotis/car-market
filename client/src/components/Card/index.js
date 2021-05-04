@@ -1,17 +1,25 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const Card = ({brand, model, stateAU, images }) => {
-  console.log(brand, model, stateAU);
+const Card = ({brand, model, stateAU, images, _id }) => {
+  console.log(brand, model, stateAU, images, _id);
+  let id = _id;
   return (
   
     <div className="card" style={{width: '300px'}}>
       <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+        {/* <div className="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 3"></button>
+        </div> */}
         <div className="carousel-inner">
           {images.map(image => (
             <div className="carousel-item active">
-            <img src={image} className="d-block w-100" alt={image}/>
-          </div>
+              <img src={image} className="d-block w-100" alt={image}/>
+            </div>
           ))}
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -25,10 +33,12 @@ const Card = ({brand, model, stateAU, images }) => {
       </div>
       <div className="card-body">
         <h3 className="card-title">{brand}</h3>
-        <h6 className="fas fa-car-side">{model}</h6>
-        <h6 className="card-title">{stateAU}</h6>
-        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
+        <h6 className="card-title"><strong>model: </strong>{model}</h6>
+        <h6 className="card-title"><strong>state: </strong>{stateAU}</h6>
+        {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+        <Link to={"/carsinmarket/" + id } className="btn btn-primary">
+          <strong>more info</strong>
+        </Link>
       </div>
     </div>
   );

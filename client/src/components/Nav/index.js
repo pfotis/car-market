@@ -22,7 +22,7 @@ function Nav() {
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><NavLink
-                to="/buy"
+                to="/carsinmarket"
                 className="dropdown-item"
               >
                 Cars For Sale
@@ -30,7 +30,7 @@ function Nav() {
             </li>
             <li>
               <NavLink
-                to="/sell"
+                to="/carsforsell"
                 className="dropdown-item"
               >
                 Sell My Car
