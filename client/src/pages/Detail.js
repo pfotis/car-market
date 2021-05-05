@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
+import Image from "../components/Image";
 import API from "../utils/API";
 import "./style.css";
 
@@ -11,27 +12,20 @@ function Detail(props) {
   // When this component mounts, grab the car with the _id of props.match.params.id
   // e.g. localhost:3000/carsinmarket/599dcb67f0f16317844583fc
   const {id} = useParams()
-  console.log(id);
   useEffect(() => {
     API.getCar(id)
-      .then(res => {setCar(res.data);
-      console.log(res.data);})
+      .then(res => setCar(res.data))
       .catch(err => console.log(err));
   }, [])
 
-  console.log(car);
 
   return (
     <Container fluid>
       <Row>
         <Col size="md-6 sm-12">
-            {/* <h1>About under constraction !</h1>
-            <h1>
-              <span role="img" aria-label="Face With Rolling Eyes Emoji">
-                🙄
-              </span>
-            </h1>
-          </Jumbotron> */}
+          {/* <Image
+            images = {car.images}
+          /> */}
         </Col>
         <Col size="md-6 sm-12">
           <div className="details">
