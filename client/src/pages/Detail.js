@@ -22,12 +22,12 @@ function Detail(props) {
   return (
     <Container fluid>
       <Row>
-        <Col size="md-6 sm-12">
+        <Col size=" lg-6 md-6 sm-12">
           {/* <Image
             images = {car.images}
           /> */}
         </Col>
-        <Col size="md-6 sm-12">
+        <Col size="lg-6 md-6 sm-12">
           <div className="details">
             <h1><strong>Brand : </strong>{car.brand}</h1>
             <br/>

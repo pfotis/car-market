@@ -24,7 +24,7 @@ function Buy() {
       <Container fluid>
         <Row>
           {cars.map(car => (
-            <Col size="md-4 sm-12">
+            <Col size="lg-4 md-6 sm-12">
               <Card
                 brand = {car.brand}
                 model = {car.model}
