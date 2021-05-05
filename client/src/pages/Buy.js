@@ -15,13 +15,12 @@ function Buy() {
     API.getCars()
       .then(res =>{
         setCars(res.data)
-        console.log(res.data);
       })
       .catch(err => console.log(err));
   };
 
+  
     return (
-      
       <Container fluid>
         <Row>
           {cars.map(car => (

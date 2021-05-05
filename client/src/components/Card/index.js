@@ -7,7 +7,7 @@ const Card = ({brand, model, stateAU, images, _id }) => {
   let id = _id;
   return (
   
-    <div className="card marketCard" style={{width: '300px'}}>
+    <div className="card marketCard">
       <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
         {/* <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>

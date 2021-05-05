@@ -83,7 +83,7 @@ function Signup() {
                 </div>
 
                 <FormBtn
-                    disabled={!(formObject.email && formObject.password && formObject.lastname && formObject.firstname)}
+                    // disabled={!(formObject.email && formObject.password && formObject.lastname && formObject.firstname)}
                     onClick={handleFormSubmit}
                 >
                     Register

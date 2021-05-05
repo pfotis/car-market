@@ -23,21 +23,30 @@ const UserSchema = new Schema({
   }
 });
 
-UserSchema.pre('save', function(next) {
-  // SignedIn user go to next()
-  if (!this.isModified('password')) {
-    return next()
-  }
-  // User just SignedUp->hash the password before saving in the database
-      bcrypt.genSalt(10, (err, salt) => {
-        if (err) return next(err);
-        // otherwise hash the password
-        bcrypt.hash(this.password, salt, (err, hash) => {
-          if (err) return next(err);
-          this.password = hash;
-          next();
-        });
-      });
-})
+module.exports.createUser = function(newUser, cb){
+  bcrypt.genSalt(10, function(err, salt) {
+    bcrypt.hash(newUser.password, salt, function(err, hash) {
+      newUser.password = hash;
+      newUser.save(cb);
+    });
+  });
+}
+
+module.exports.getUserByUsername = function(email, cb){
+  var query = {email: email};
+  User.findOne(query, cb);
+}
+
+module.exports.getUserById = function(id, cb){
+  User.findById(id, cb);
+}
+
+module.exports.comparePassword = function(candidatePassword, hash, cb){
+  bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
+    if(err) throw err;
+    cb(null, isMatch);
+  });
+}
 
 module.exports = mongoose.model('User', UserSchema);
+
