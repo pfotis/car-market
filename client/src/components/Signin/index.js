@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Col } from "../Grid";
+import Facebook from "../Facebook";
 import "./style.css";
 
 function Login() {
@@ -19,8 +20,12 @@ function Login() {
     }
     
     return (
-        <form className="signin" onSubmit={handleSubmit}>
-            <Col size="md-6 sm-12">
+        <div className="signin">
+            <Col size="lg-6 md-6 sm-12">
+                <Facebook/>
+            </Col>
+            <Col size="lg-6 md-6 sm-12">
+            <form onSubmit={handleSubmit}>
                 <h3>Log in</h3>
                 <br/>
                 <div className="form-group">
@@ -55,11 +60,14 @@ function Login() {
                 <Link
                     to="/signup"
                 >
-                    sign up
+                    Login
                 </Link>
             </p>
-            </Col>
-        </form>
+            </form>
+        </Col>
+        
+        </div>
+        
     );
 }
 

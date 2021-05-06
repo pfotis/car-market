@@ -18,6 +18,8 @@ function Detail(props) {
       .catch(err => console.log(err));
   }, [])
 
+  console.log(car.images);
+
 
   return (
     <Container fluid>
