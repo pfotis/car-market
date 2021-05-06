@@ -3,7 +3,6 @@ const router = require("express").Router();
 const isAuthenticated = require("../../../config/isAuthenticated");
 
 router.post('/signup', function(req, res){
-    var password = req.body.password;
     var newUser = new User({
       firstname: req.body.firstname,
       lastname: req.body.lastname,
