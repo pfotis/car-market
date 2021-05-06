@@ -33,7 +33,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-  User.getUserById(id, (err, user) => {
+  db.User.getUserById(id, (err, user) => {
     done(err, user);
   });
 });
