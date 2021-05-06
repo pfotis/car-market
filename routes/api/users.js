@@ -5,9 +5,9 @@ const isAuthenticated = require("../../../config/isAuthenticated");
 router.post('/signup', function(req, res){
     var password = req.body.password;
     var newUser = new User({
-      name: req.body.name,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
       email: req.body.email,
-      username: req.body.username,
       password: req.body.password
     });
     User.createUser(newUser, function(err, user){

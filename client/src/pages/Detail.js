@@ -30,7 +30,7 @@ function Detail(props) {
           /> */}
         </Col>
         <Col size="lg-6 md-6 sm-12">
-          <div className="details">
+          <div className="font">
             <h1><strong>Brand : </strong>{car.brand}</h1>
             <br/>
             <h4><strong>Model : </strong>{car.model}</h4>
