@@ -21,7 +21,7 @@ export function TextArea(props) {
 
 export function FormBtn(props) {
   return (
-    <button {...props} className="btn btn-dark btn-lg btn-block styleButton">
+    <button {...props} className="styleButton">
       {props.children}
     </button>
   );

@@ -1,3 +1,18 @@
 .styleButton {
-    border-radius: 100px;
+    border-radius: 10px;
+    background-color: rgb(74, 74, 207);
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.styleButton:hover {
+    background-color: rgb(16, 16, 167);
 }

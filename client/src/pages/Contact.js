@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row } from "../components/Grid";
+import { FormBtn } from "../components/Form";
 
 function ContactForm() {
   return (
@@ -36,9 +37,7 @@ function ContactForm() {
                   rows="8"
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-primary">
-                Submit
-              </button>
+              <FormBtn>Submit</FormBtn>
             </form>
           </div>
         </Row>

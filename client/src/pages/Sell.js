@@ -215,8 +215,6 @@ function Sell() {
                     }
 
                 </div>
-                <br/>
-                <br/>
                 <FormBtn
                     onClick={handleFormSubmit}
                 >

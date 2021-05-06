@@ -28,7 +28,7 @@ function Signup() {
 
     return (
         <form className="signup"  onSubmit={handleFormSubmit}> 
-            <Col size="md-6 sm-12">
+            <Col size="lg-5 md-6 sm-12">
                 <h3>Register</h3>
                 <br/>
                 <Row>
@@ -70,20 +70,17 @@ function Signup() {
                         placeholder="Enter password (required)"
                     />
                 </div>
-                <br/>
-                <br/>
                 <FormBtn
-                    // disabled={!(formObject.email && formObject.password && formObject.lastname && formObject.firstname)}
                     onClick={handleFormSubmit}
                 >
-                    Register
+                    Sign Up
                 </FormBtn>
                 <p className="forgot-password text-right">
-                    Already registered  
+                    Already registered
                     <Link
                         to="/signin"
                     >
-                        sign in
+                        Sign In
                     </Link>
                 </p>
             </Col>
