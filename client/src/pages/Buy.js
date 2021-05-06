@@ -13,12 +13,12 @@ function Buy() {
 
   function loadCars() {
     API.getCars()
-      .then(res =>{
-        setCars(res.data)
+      .then(res => {
+        console.log(res.data);
+        setCars(res.data);
       })
       .catch(err => console.log(err));
   };
-
   
     return (
       <Container fluid>

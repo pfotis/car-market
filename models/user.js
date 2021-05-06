@@ -32,7 +32,7 @@ module.exports.createUser = function(newUser, cb){
   });
 }
 
-module.exports.getUserByUsername = function(email, cb){
+module.exports.getUserByEmail = function(email, cb){
   var query = {email: email};
   User.findOne(query, cb);
 }

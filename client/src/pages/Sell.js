@@ -8,8 +8,6 @@ require('dotenv').config();
 
 
 function Sell() {
-
-    const [cars, setCars] = useState([])
     const [count, dispatch] = useReducer((state, action) => {
         if (action === "subtract") {
             return state - 1;
@@ -47,17 +45,17 @@ function Sell() {
         setLoading(false)
     };
 
-    useEffect(() => {
-        loadCars()
-      }, [])
+    // useEffect(() => {
+    //     loadCars()
+    //   }, [])
 
-    function loadCars() {
-        API.getCars()
-            .then(res => 
-            setCars(res.data)
-            )
-            .catch(err => console.log(err));
-    };
+    // function loadCars() {
+    //     API.getCars()
+    //         .then(res => 
+    //         setCars(res.data)
+    //         )
+    //         .catch(err => console.log(err));
+    // };
 
 
     function handleInputChange(event) {
@@ -81,7 +79,7 @@ function Sell() {
             stateAU: formObject.stateAU,
             images: image
           })
-            .then(res => loadCars())
+            .then(res => window.location = "/carsinmarket")
             .catch(err => console.log(err));
       };
     
@@ -210,7 +208,7 @@ function Sell() {
                         loading?(
                             <h3>loading...</h3>
                         ):(
-                            <img src={viewImg} style={{width:'100px'}}/>
+                            <img src={viewImg} alt= {viewImg} style={{width:'100px'}}/>
                         )
                     }
 

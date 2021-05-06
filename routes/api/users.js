@@ -1,6 +1,6 @@
-const passport = require("../../../config/passport");
+const passport = require("../../config/passport");
 const router = require("express").Router();
-const isAuthenticated = require("../../../config/isAuthenticated");
+const isAuthenticated = require("../../config/isAuthenticated");
 
 router.post('/signup', function(req, res){
     var newUser = new User({

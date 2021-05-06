@@ -29,7 +29,7 @@ function App() {
           <Route exact path={["/carsinmarket"]}>
             <Buy />
           </Route>
-          <Route exact path="/carsinmarket/:id">
+          <Route exact path={["/carsinmarket/:id"]}>
             <Detail />
           </Route>
           <Route exact path={["/about"]}>
