@@ -2,7 +2,6 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-var x;
 const UserSchema = new Schema({
   firstname: {
     type: String,
@@ -22,6 +21,10 @@ const UserSchema = new Schema({
     unique: true
   }
 });
+
+const User = mongoose.model('User', UserSchema);
+
+module.exports = User;
 
 module.exports.createUser = function(newUser, cb){
   bcrypt.genSalt(10, function(err, salt) {
@@ -48,5 +51,5 @@ module.exports.comparePassword = function(candidatePassword, hash, cb){
   });
 }
 
-module.exports = mongoose.model('User', UserSchema);
+
 

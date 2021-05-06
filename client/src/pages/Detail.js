@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
+import { FormBtn } from "../components/Form";
 import Image from "../components/Image";
 import API from "../utils/API";
 import "./style.css";
@@ -14,20 +15,26 @@ function Detail(props) {
   const {id} = useParams()
   useEffect(() => {
     API.getCar(id)
-      .then(res => setCar(res.data))
+      .then(res => { 
+        console.log(res.data.images[0]);
+        setCar(res.data);
+      })
       .catch(err => console.log(err));
-  }, [])
-
-  console.log(car.images);
-
+  }, [id])
 
   return (
     <Container fluid>
       <Row>
+      <br/>
+          <Link to="/carsinmarket">← Back</Link>
+          <br/>
+          <br/>
+      </Row>
+      <Row>
         <Col size=" lg-6 md-6 sm-12">
-          {/* <Image
+          <Image
             images = {car.images}
-          /> */}
+          />
         </Col>
         <Col size="lg-6 md-6 sm-12">
           <div className="font">
@@ -74,16 +81,15 @@ function Detail(props) {
                     rows="8"
                   ></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary">
-                  Submit
-                </button>
+                <FormBtn>Submit</FormBtn>
+                <br/>
+                <br/>
+                <br/>
+                <Link to="/carsinmarket">← Back</Link>
+                <br/>
+                <br/>
               </form>
             </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col size="md-2">
-          <Link to="/carsinmarket">← Back</Link>
         </Col>
       </Row>
     </Container>

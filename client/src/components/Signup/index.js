@@ -21,8 +21,9 @@ function Signup() {
           password
         };
         console.log(user);
-        axios.post("/api/signup", user).then((res) => {
-          window.location = "/signin";
+        axios.post("/api/users/signup", user).then((res) => {
+        //   window.location = "/signin";
+            console.log("good");
         });
       };
 

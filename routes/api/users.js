@@ -1,21 +1,23 @@
 const passport = require("../../config/passport");
 const router = require("express").Router();
 const isAuthenticated = require("../../config/isAuthenticated");
+const db = require("../../models");
 
 router.post('/signup', function(req, res){
-    var newUser = new User({
+    var newUser = new db.User({
       firstname: req.body.firstname,
       lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password
     });
-    User.createUser(newUser, function(err, user){
+    console.log(newUser);
+    db.User.createUser(newUser, function(err, user){
       if(err) throw err;
       res.send(user).end()
     });
 });
 
-router.post("/login", passport.authenticate("local"), (req, res) => {
+router.post("/signin", passport.authenticate("local"), (req, res) => {
   const loginUser = {
     email: req.body.email,
     password: req.body.password,
