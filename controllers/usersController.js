@@ -1,4 +1,12 @@
 const db = require("../models");
+const fetch = require("node-fetch");
+
+exports.facebooklogin = (res,req) => {
+  const {userID, accessToken} = req.body;
+
+  let urlGraphFacebook = `https://graph.facebook.com/v2.11/${userID}/?fileds=id,name,email&access_token=${accessToken}`;
+
+}
 
 // Defining methods for the carsController
 module.exports = {

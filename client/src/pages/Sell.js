@@ -45,19 +45,6 @@ function Sell() {
         setLoading(false)
     };
 
-    // useEffect(() => {
-    //     loadCars()
-    //   }, [])
-
-    // function loadCars() {
-    //     API.getCars()
-    //         .then(res => 
-    //         setCars(res.data)
-    //         )
-    //         .catch(err => console.log(err));
-    // };
-
-
     function handleInputChange(event) {
         const { name, value } = event.target;
 
@@ -81,10 +68,8 @@ function Sell() {
           })
             .then(res => window.location = "/carsinmarket")
             .catch(err => console.log(err));
-      };
+    };
     
-      
-
     return (
         <form className="space"> 
             <Col size="md-6 sm-12">

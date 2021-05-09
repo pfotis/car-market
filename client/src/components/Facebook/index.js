@@ -1,40 +1,33 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 
-export default class Facebook extends Component {
-    state = {
-        isLoggedIn: false,
-        userID: '',
-        name: '',
-        email: '',
-        picture: ''
-    };
-
-    responseFacebook = response => {
+const Facebook = () => {
+    
+    const responseFacebook = (response) => {
         console.log(response);
+        axios({
+            method: "POST",
+            url: "http//localhost:3000/api/faceebooklogin",
+            data: {accessToken: response.accessToken, userID: response.userID}
+        }).then(response => {
+            console.log("Facebook login seccess", response);
+        })
     }
 
-    componentClicked = () => console.log("clicked");
+    const responseErrorFacebook = (response) => {
 
-    render() {
-        let fbContent;
-        if(this.state.isLoggedIn) {
-            fbContent = null;
-        }else {
-            fbContent = (
-                <FacebookLogin
-                    appId="150190106992886"
-                    autoLoad={true}
-                    fields="name,email,picture"
-                    onClick={this.componentClicked}
-                    callback={this.responseFacebook} />
-            )
-        }
-        return (
-            <div>
-                {fbContent}
-            </div>
-        )
     }
+
+    return (
+        <div>
+            <FacebookLogin
+                appId="150190106992886"
+                autoLoad={false}
+                callback={responseFacebook} />
+        </div>
+    )
 
 }
+
+export default Facebook;
