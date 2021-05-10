@@ -32,10 +32,11 @@ router.post("/facebook-login", (req, res) => {
         });
         db.User.createUser(newUser, function(err, user){
           if(err) throw err;
-          res.send(user).end()
+          res.send(user).end();
         });
       } else {
         console.log("login with facebbok");
+        res.send(user).end();
       }
     })
 });
