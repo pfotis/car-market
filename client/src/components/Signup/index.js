@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+//import components
 import { Col, Row } from "../Grid";
 import { Input, FormBtn } from "../Form";
-import Facebook from "../Facebook";
+//import css
 import "./style.css";
  
 function Signup() {
@@ -29,11 +30,6 @@ function Signup() {
 
     return (
         <Row>
-            {/* <Col size="lg-6 md-6 sm-12">
-                <div className="social"> 
-                    <Facebook/>
-                </div>
-            </Col> */}
             <form className="signup"  onSubmit={handleFormSubmit}> 
                 <Col size="lg-5 md-6 sm-12">
                     <h3>Register</h3>

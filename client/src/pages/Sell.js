@@ -1,7 +1,10 @@
 import React, { useState, useReducer } from "react";
+// import API
 import API from "../utils/API";
+// import components
 import { Col, Row } from "../components/Grid";
 import { FormBtn, FormInput } from "../components/Form";
+//import css
 import "./style.css";
 
 require('dotenv').config();

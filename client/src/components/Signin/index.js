@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+//import components
 import { Col, Row } from "../Grid";
 import { Input, FormBtn } from "../Form";
 import Facebook from "../Facebook";
+//import css
 import "./style.css";
 
 function Login() {
+
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
 

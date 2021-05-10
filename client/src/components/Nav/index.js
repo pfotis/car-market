@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-
 function Nav() {
+  
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -38,7 +38,9 @@ function Nav() {
                   Sell My Car
                 </NavLink>
               </li>
-              <li><hr className="dropdown-divider"/></li>
+              <li>
+                <hr className="dropdown-divider"/>
+              </li>
               <li>
                 <NavLink
                   to="/about"
@@ -55,28 +57,28 @@ function Nav() {
                   Contact
                 </NavLink>
               </li>
-            </ul>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/signin"
-              className="nav-link"
-            >
-              Sign in
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              to="/signup"
-              className="nav-link"
-            >
-              Sign Up
-            </NavLink>
-          </li>
-        </ul>
+              </ul>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/signin"
+                className="nav-link"
+              >
+                Sign in
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/signup"
+                className="nav-link"
+              >
+                Sign Up
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   );
 }
 

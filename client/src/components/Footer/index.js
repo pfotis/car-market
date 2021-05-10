@@ -1,8 +1,11 @@
 import React from "react";
+// import components
 import { Row } from  "../Grid";
+// import css
 import "./style.css";
 
 function Footer() {
+    
   return (
     <footer className="page-footer font-small mdb-color sticky grey pt-4">
         <div className="container-fluid text-center text-md-left">

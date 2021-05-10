@@ -1,10 +1,9 @@
-import axios from 'axios';
-import React, { Component } from 'react';
+import React from 'react';
 import FacebookLogin from 'react-facebook-login';
+import axios from 'axios';
 
 const Facebook = () => {
 
-    
     const responseFacebook = (response) => {
         const nameSplit = response.name.split(" ");
         const user = {

@@ -1,4 +1,5 @@
 import React from "react";
+// import components
 import { Col, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 

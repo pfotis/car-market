@@ -1,7 +1,7 @@
 import React from "react";
-import { Col, Row, Container } from "../components/Grid";
 import { Link } from "react-router-dom";
-
+// import components
+import { Col, Row, Container } from "../components/Grid";
 
 function About() {
   

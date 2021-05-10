@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+// import components
 import { Col, Row, Container } from "../components/Grid";
 import { FormBtn } from "../components/Form";
 import Image from "../components/Image";
+// import API
 import API from "../utils/API";
+// import css
 import "./style.css";
 
 

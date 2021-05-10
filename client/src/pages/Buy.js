@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+// import API
 import API from "../utils/API";
+// import components
 import { Col, Row, Container } from "../components/Grid";
 import Card from "../components/Card";
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+// import css
 import "./style.css";
 
 const Card = ({brand, model, stateAU, images, _id }) => {
   
   let id = _id;
   let target = "#carousel"+id;
-  console.log(target);
+
   return (
     <div className="card marketCard">
       <div id={id} className="carousel slide" data-bs-ride="carousel">

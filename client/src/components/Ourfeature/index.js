@@ -1,8 +1,11 @@
 import React from 'react';
+// import components
 import { Col, Row } from "../Grid";
+// import css
 import "./style.css";
 
 const OurFeature = () => {
+  
   return (
     <div className='mt-5 pt-5'>
       <section className='white-text'>
