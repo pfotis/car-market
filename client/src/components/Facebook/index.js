@@ -6,7 +6,18 @@ const Facebook = () => {
 
     
     const responseFacebook = (response) => {
-        window.location = "/home";
+        const nameSplit = response.name.split(" ");
+        const user = {
+            firstname: nameSplit[0],
+            lastname: nameSplit[1],
+            email: response.email,
+            facebookId: response.id
+        };
+        axios.post("/api/users/signup", user)
+            .then((res) => {
+                console.log("facebook sign up response", res);
+                // window.location = "/home";
+            });
     }
 
     return (
