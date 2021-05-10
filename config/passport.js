@@ -2,7 +2,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const db = require("../models");
 
-passport.use(
+passport.use("local",
   new LocalStrategy(
     {
       usernameField: "email",
@@ -28,6 +28,27 @@ passport.use(
     }
   )
 );
+
+passport.use("facebook",
+  new LocalStrategy(
+    {
+      usernameField: "id",
+    },
+    (id, password, done) => {
+      console.log("inside facebook authenticate", id);
+      User.findOne({ facebookId: id }).then((user) => {
+        if (err) {
+          throw err;
+        }
+        if (!user) {
+          return done(null, false, { message: "Not registered via facebook" });
+        }
+        return done(null, user);
+      });
+    }
+  )
+);
+
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });

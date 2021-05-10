@@ -11,12 +11,13 @@ const Facebook = () => {
             firstname: nameSplit[0],
             lastname: nameSplit[1],
             email: response.email,
-            facebookId: response.id
+            facebookId: response.id,
+            password: "facebook"
         };
-        axios.post("/api/users/signup", user)
+        axios.post("/api/users/facebook-login", user)
             .then((res) => {
                 console.log("facebook sign up response", res);
-                // window.location = "/home";
+                window.location = "/home";
             });
     }
 
