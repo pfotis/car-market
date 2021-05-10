@@ -4,19 +4,10 @@ import FacebookLogin from 'react-facebook-login';
 
 const Facebook = () => {
     
+    
     const responseFacebook = (response) => {
         console.log(response);
-        axios({
-            method: "POST",
-            url: "http//localhost:3000/api/faceebooklogin",
-            data: {accessToken: response.accessToken, userID: response.userID}
-        }).then(response => {
-            console.log("Facebook login seccess", response);
-        })
-    }
-
-    const responseErrorFacebook = (response) => {
-
+        // window.location = "/home";
     }
 
     return (
@@ -24,6 +15,7 @@ const Facebook = () => {
             <FacebookLogin
                 appId="150190106992886"
                 autoLoad={false}
+                fields="name,email,picture"
                 callback={responseFacebook} />
         </div>
     )

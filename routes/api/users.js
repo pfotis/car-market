@@ -1,7 +1,7 @@
 const passport = require("../../config/passport");
 const router = require("express").Router();
 const isAuthenticated = require("../../config/isAuthenticated");
-const facebooklogin = require("../../controllers/userController")
+const facebooklogin = require("../../controllers/usersController")
 const db = require("../../models");
 
 router.post('/signup', function(req, res){
@@ -44,7 +44,5 @@ router.get("/logout", (req, res) => {
   req.logout();
   res.send(null);
 });
-
-router.post('/facebooklogin', facebooklogin);
 
 module.exports = router;

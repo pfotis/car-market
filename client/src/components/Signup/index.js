@@ -22,8 +22,7 @@ function Signup() {
         };
         console.log(user);
         axios.post("/api/users/signup", user).then((res) => {
-        //   window.location = "/signin";
-            console.log("good");
+          window.location = "/signin";
         });
       };
 
