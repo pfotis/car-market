@@ -6,8 +6,7 @@ const Facebook = () => {
 
     
     const responseFacebook = (response) => {
-        console.log(response);
-        // window.location = "/home";
+        window.location = "/home";
     }
 
     return (
