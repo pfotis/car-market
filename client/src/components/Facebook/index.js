@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 
 const Facebook = () => {
-    
+
     
     const responseFacebook = (response) => {
         console.log(response);

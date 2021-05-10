@@ -15,7 +15,6 @@ function Login() {
         const user = {email, password}        
         axios.post("/api/users/signin", user)
         .then(res => {
-            console.log(res);
             window.location = "/home";
         })
     }

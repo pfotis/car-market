@@ -9,13 +9,31 @@ router.post('/signup', function(req, res){
       firstname: req.body.firstname,
       lastname: req.body.lastname,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      facebookId: req.body.facebookId
     });
     console.log(newUser);
     db.User.createUser(newUser, function(err, user){
       if(err) throw err;
       res.send(user).end()
     });
+});
+
+const createUserWithFbResponse = (req, res) => {
+  db.User.create(req.body)
+  .then(dbModel => res.json(dbModel))
+  .catch(err => res.status(422).json(err));
+};
+ 
+router.post("/facebook-login", (req, res) => {
+  db.User.findOne({ facebookId: req.body.facebookId })
+    .then((user) => {
+      if (!user) {
+        createUserWithFbResponse(req.body)
+      } else {
+        console.log("login");
+      }
+    })
 });
 
 router.post("/signin", passport.authenticate("local"), (req, res) => {

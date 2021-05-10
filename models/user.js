@@ -13,12 +13,15 @@ const UserSchema = new Schema({
   },
   password: {
     type: String,
-    required: true
+    required: false
   },
   email: {
     type: String,
     required: true,
     unique: true
+  },
+  facebookId: {
+    type: String
   }
 });
 
