@@ -1,7 +1,7 @@
 {
   "name": "carmarket",
   "version": "1.0.0",
-  "description": "",
+  "description": "car dealer website",
   "engines": {
     "node": "14.15.4",
     "npm": "6.14.10"

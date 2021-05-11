@@ -18,7 +18,6 @@ router.post('/signup', function(req, res){
     });
 });
 
-
 router.post("/facebook-login", (req, res) => {
   db.User.findOne({ facebookId: req.body.facebookId })
     .then((user) => {
