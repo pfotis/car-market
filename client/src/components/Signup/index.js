@@ -4,6 +4,7 @@ import axios from "axios";
 //import components
 import { Col, Row } from "../Grid";
 import { Input, FormBtn } from "../Form";
+import Facebook from "../Facebook";
 //import css
 import "./style.css";
  
@@ -30,8 +31,13 @@ function Signup() {
 
     return (
         <Row>
-            <form className="signup"  onSubmit={handleFormSubmit}> 
-                <Col size="lg-5 md-6 sm-12">
+            <Col size="lg-6 md-6 sm-12">
+                <div className="social"> 
+                    <Facebook/>
+                </div>
+            </Col>
+            <Col size="lg-6 md-6 sm-12">
+                <form className="signup"  onSubmit={handleFormSubmit}> 
                     <h3>Register</h3>
                     <br/>
                     <Row>
@@ -85,8 +91,8 @@ function Signup() {
                             Sign In
                         </Link>
                     </p>
-                </Col>
-            </form>
+                </form>
+            </Col>
         </Row>
     );
 }

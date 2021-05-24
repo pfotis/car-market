@@ -3,7 +3,8 @@
     margin-top: 70px;
 }
 
-.button {
+.social {
+    margin-top: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
